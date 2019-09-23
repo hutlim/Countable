@@ -146,7 +146,7 @@
 
     return {
       paragraphs: trimmed ? (trimmed.match(options.hardReturns ? /\n{2,}/g : /\n+/g) || []).length + 1 : 0,
-      sentences: trimmed ? (trimmed.match(/\w[.?!](\s|$)/g) || []).length + 1 : 0,
+      sentences: trimmed ? (trimmed.match(/\w[.?!](\s|$)/g) || []).length : 0,
       words: trimmed ? (trimmed.replace(/['";:,.?¿\-!¡]+/g, '').match(/\S+/g) || []).length : 0,
       characters: trimmed ? decode(trimmed.replace(/\s/g, '')).length : 0,
       all: decode(original.replace(/\r?\n|\r/g, '')).length
